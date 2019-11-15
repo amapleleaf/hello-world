@@ -1,25 +1,36 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
-
+const Layout = () => import('./views/layout/index')
+const Home = () => import('./views/Home')
+const Login = () => import('./views/Login')
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
   base: process.env.BASE_URL,
-  routes: [
+  routes: [{
+    path: '/login',
+    component: Login
+  }]
+})
+
+export const DynamicRoutes = [{
+  path: '',
+  component: Layout,
+  name: 'container',
+  redirect: 'home',
+  meta: {
+    name: '首页'
+  },
+  children: [
     {
-      path: '/',
+      id: 1,
+      path: 'home',
+      component: Home,
       name: 'home',
-      component: Home
-    },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      meta: {
+        name: '首页',
+        icon: 'tree'
+      }
     }
   ]
-})
+}]
