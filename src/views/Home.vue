@@ -5,7 +5,7 @@
 
     <div>
       ------------------------------------------------------------
-      {{globalname}}
+      {{crumbList}}
       ------------------------------------------------------------
       {{hometitle}}
       -----------------------------------------------------------
@@ -23,7 +23,7 @@ export default {
     HelloWorld
   },
   computed: {
-    ...mapState(['globalname']),
+    ...mapState(['crumbList']),
     ...mapState('home',['hometitle'])
   },
 }

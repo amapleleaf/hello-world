@@ -8,7 +8,7 @@ const dynamicRoutes = [
     component: About,
     meta: {
       name: '关于',
-      icon: 'user'
+      icon: 'el-icon-warning-outline'
     }
   },{
     path: '/basic',
@@ -16,7 +16,7 @@ const dynamicRoutes = [
     component: Basic,
     meta: {
       name: '基础',
-      icon: 'eye'
+      icon: 'el-icon-picture-outline-round'
     }
   }
 ]
