@@ -1,11 +1,8 @@
 import router, { DynamicRoutes } from '@/router'
 import dynamicRouter from '@/dynamic-router'
 export default {
+  namespaced:true,
   state: {
-    /* 导航菜单是否折叠 */
-    isSidebarNavCollapse: false,
-    /* 面包屑导航列表 */
-    crumbList: [],
     permissionList: null /** 所有路由 */,
     sidebarMenu: [] /** 导航菜单 */,
     currentMenu: '' /** 当前active导航菜单 */,
@@ -14,12 +11,6 @@ export default {
     account: ''/** 用户角色 */
   },
   mutations:{
-    toggleNavCollapse(state) {
-      state.isSidebarNavCollapse = !state.isSidebarNavCollapse
-    },
-    setCrumbList(state, list) {
-      state.crumbList = list
-    },
     SET_AVATAR(state, avatar) {
       state.avatar = avatar
     },

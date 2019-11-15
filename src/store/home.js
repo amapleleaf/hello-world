@@ -1,4 +1,5 @@
 const home = {
+  namespaced:true,
   state: {
     hometitle: 'home title',
     students: []

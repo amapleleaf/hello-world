@@ -6,7 +6,7 @@
         active-text-color="#4dbcff"
         :default-active="currentMenu"
     >
-        <DynamicMenu :menuList="sidebarMenuqwe"></DynamicMenu>
+        <DynamicMenu :menuList="sidebarMenu"></DynamicMenu>
     </el-menu>
 </template>
 
@@ -22,7 +22,7 @@ export default {
     },
     computed: {
         ...mapState(['isSidebarNavCollapse']),
-        ...mapState(['sidebarMenuqwe', 'currentMenu'])
+        ...mapState('permission',['sidebarMenu', 'currentMenu'])
     },
     methods: {},
     components: {

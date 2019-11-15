@@ -16,7 +16,7 @@ export default {
         return {}
     },
     computed: {
-        ...mapState(['isSidebarNavCollapse'])
+        ...mapState('permission',['isSidebarNavCollapse'])
     },
     components: {
         sidebarNav,

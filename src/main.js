@@ -17,5 +17,5 @@ new Vue({
 router.afterEach((to, from, next) => {
   var routerList = to.matched
   store.commit('setCrumbList', routerList)
-  store.commit('SET_CURRENT_MENU', to.name)
+  store.commit('permission/SET_CURRENT_MENU', to.name)
 })

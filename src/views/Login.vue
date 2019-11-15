@@ -16,7 +16,7 @@
             this.FETCH_PERMISSION();
             this.$router.replace("/");
           },
-          ...mapActions([
+          ...mapActions('permission',[
             'FETCH_PERMISSION'
           ])
         }
