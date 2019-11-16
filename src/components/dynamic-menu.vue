@@ -11,7 +11,7 @@
             class='iconfont'
             :class='v.meta.icon'
           ></i> -->
-          <svg-icon v-if="v.meta&&v.meta.icon" :icon-class="v.meta.icon"></svg-icon>
+          <i v-if="v.meta&&v.meta.icon" :class="v.meta.icon"></i>
           <span>{{v.meta.name}}</span>
         </template>
         <el-menu-item-group>
