@@ -22,7 +22,8 @@ export const DynamicRoutes = [
     name: 'container',
     redirect: 'home',
     meta: {
-      name: '首页'
+      name: '首页',
+      requiresAuth: true,
     },
     children: [
       {

@@ -13,12 +13,13 @@
         name: "login",
         methods:{
           login () {
-            this.FETCH_PERMISSION();
+            //this.FETCH_PERMISSION();
+            this.$store.commit('LOGIN_IN', "123321123321");
             this.$router.replace("/");
-          },
-          ...mapActions('permission',[
+          }/*,
+         ...mapActions('permission',[
             'FETCH_PERMISSION'
-          ])
+          ])*/
         }
     }
 </script>

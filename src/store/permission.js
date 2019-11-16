@@ -3,7 +3,6 @@ import dynamicRouter from '@/dynamic-router'
 export default {
   namespaced:true,
   state: {
-    permissionList: null /** 所有路由 */,
     sidebarMenu: [] /** 导航菜单 */,
     currentMenu: '' /** 当前active导航菜单 */,
     control_list: [] /** 完整的权限列表 */,
@@ -16,12 +15,6 @@ export default {
     },
     SET_ACCOUNT(state, account) {
       state.account = account
-    },
-    SET_PERMISSION(state, routes) {
-      state.permissionList = routes
-    },
-    CLEAR_PERMISSION(state) {
-      state.permissionList = null
     },
     SET_MENU(state, menu) {
       state.sidebarMenu = menu
@@ -46,6 +39,7 @@ export default {
       let children = MainContainer.children
       commit('SET_CONTROL_LIST', [...children, ...dynamicRouter])
       commit('SET_MENU', [...children, ...dynamicRouter])
+      children.push(...dynamicRouter);
       router.addRoutes(DynamicRoutes)
     }
   }

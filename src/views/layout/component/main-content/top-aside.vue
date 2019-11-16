@@ -50,11 +50,14 @@ export default {
         return {}
     },
     computed: {
-        ...mapState(['avatar','account','isSidebarNavCollapse', 'crumbList']),
+        ...mapState('permission',['avatar','account']),
+        ...mapState(['isSidebarNavCollapse', 'crumbList']),
     },
     methods: {
         loginOut(){
-          this.$router.push('/login')
+          this.$store.commit('LOGIN_OUT')
+          /* 防止切换角色时addRoutes重复添加路由导致出现警告 */
+          window.location.reload()
         },
         toggleNavCollapse() {
             this.$store.commit('toggleNavCollapse')
